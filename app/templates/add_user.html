@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+<div class="userform">
+    <div class="mid">
+        <h1>Add User</h1>
+            <br><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            User Name : <br>
+            <input type=" text" name="name" required><br>
+            Email : <br>
+            <input type="email" name="email" required><br>
+            Mobile No : <br>
+            <input type="number" name="phone" required><br><br>
+
+            <button>Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock  %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+<div class="userform">
+    <div class="mid">
+        <h1>Add User</h1>
+        <br><br>
+        <form method="post">
+                {% csrf_token %}
+                <label for="user">User:</label>
+                <select name="user" id="user">
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label for="task_detail">Task Detail:</label><br>
+                <input type="text" name="task_detail" id="task_detail"><br><br>
+                <label for="task_type">Task Type:</label>
+                <select name="task_type" id="" aria-placeholder="select user">
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                        </select><br><br>
+                <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock  %}
